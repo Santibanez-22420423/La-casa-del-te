@@ -1,0 +1,9 @@
+//Usar la base de datos.
+use("La-casa-del-te")
+
+//Insertar el documento en la colección de 'Lotes'.
+db.clasificaciones.insertOne({
+    id_clasificacion: 1,
+    nombre: 'Sistema circulatorio',
+    descripcion: 'Tambien conocido como sistema cardiovascular, es el sistema responsable de transportar sangre y nutrientes a todas las celulas del cuerpo y eliminar desechos'
+})

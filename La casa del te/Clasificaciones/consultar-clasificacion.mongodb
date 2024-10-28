@@ -1,0 +1,6 @@
+//Usar la base de datos.
+use("La-casa-del-te")
+
+//Consultar los registros de los colecciones.
+//1.SELECT * FROM usuarios
+db.clasificaciones.find()

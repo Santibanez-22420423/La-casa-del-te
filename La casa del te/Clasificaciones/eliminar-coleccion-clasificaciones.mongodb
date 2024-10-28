@@ -1,0 +1,4 @@
+//Usar la base de datos
+use("La-casa-del-te")
+
+db.lotes.drop()

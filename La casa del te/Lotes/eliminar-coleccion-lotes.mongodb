@@ -1,4 +1,4 @@
 //Usar la base de datos
 use("La-casa-del-te")
 
-db.clasificaciones.drop()
+db.lotes.drop()

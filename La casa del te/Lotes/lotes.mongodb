@@ -1,0 +1,33 @@
+//Usar la base de datos.
+use("La-casa-del-te")
+
+//Crear la colección de lotes.
+db.createCollection("lotes", {
+    validator:{
+        $jsonSchema:{
+            bsonType: 'object',
+            title: 'Validación del objeto lotes',
+            required: ['id_lote', 'fecha_lote', 'caducidad'],
+            properties: {
+                id_lote:{
+                    bsonType: 'int',
+                    description: 'Id de lote'
+                },
+                fecha_lote:{
+                    bsonType: 'date',
+                    description: 'Fecha del lote'
+                },
+                caducidad:{
+                    bsonType: 'date',
+                    description: 'Fecha de caducidad del lote'
+                }
+            }
+        }
+    }
+})
+
+//Crear un índice para que las búsquedas sean más rápidas y también para que el id_lote no se duplique.
+db.lotes.createIndex(
+    {id_lote : 1}, //Indexa por id.
+    {unique: true} //Solo acepta id's únicos.
+)

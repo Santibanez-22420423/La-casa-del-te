@@ -1,0 +1,9 @@
+//Usar la base de datos.
+use("La-casa-del-te")
+
+//Insertar el documento en la colección de 'Lotes'.
+db.lotes.insertOne({
+    id_lote: 1,
+    fecha_lote: new Date("2022-01-01"),
+    caducidad: new Date("2027-01-01")
+})

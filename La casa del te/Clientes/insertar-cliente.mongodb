@@ -1,0 +1,19 @@
+//Usar la base de datos.
+use("La-casa-del-te")
+
+//Insertar el documento en la colección de 'clientes'.
+db.clientes.insertOne({
+    id_cliente: 11,
+    nombre_cliente:{
+            nombre: 'Juan',
+            apellidos: 'Pérez García'
+    },
+    direccion:{
+            calle: 'Vicente Guerrero',
+            numero: '4587',
+            colonia: 'Centro',
+            codigo_postal: 59000
+    },
+    celular: '3531489678',
+    descuento: 5.0
+});

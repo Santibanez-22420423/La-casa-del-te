@@ -14,7 +14,7 @@ db.createCollection("clientes", {
                     description: 'Id del cliente'
                 },
                 nombre_cliente:{
-                    bsonType: 'array',
+                    bsonType: 'object',
                     description: 'Datos del nombre del cliente',
                     required: ['nombre', 'apellidos'],
                     properties: {
@@ -31,7 +31,7 @@ db.createCollection("clientes", {
                     }
                 },
                 direccion:{
-                    bsonType: 'array',
+                    bsonType: 'object',
                     description: 'Datos de la dirección del cliente',
                     required: ['calle', 'numero'],
                     properties: {
@@ -55,7 +55,8 @@ db.createCollection("clientes", {
                 },
                 celular:{
                     bsonType: 'string',
-                    description: 'Celular del cliente'
+                    description: 'Celular del cliente',
+                    pattern: "^[0-9]{10}$" // Validación para un número de celular de 10 dígitos.
                 },
                 descuento:{
                     bsonType: 'double',
@@ -69,7 +70,7 @@ db.createCollection("clientes", {
 })
 
 //Crear un índice para que las búsquedas sean más rápidas y también para que el id_cliente no se duplique.
-db.lotes.createIndex(
+db.clientes.createIndex(
     {id_cliente : 1}, //Indexa por id.
     {unique: true} //Solo acepta id's únicos.
 )
